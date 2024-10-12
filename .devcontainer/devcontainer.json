@@ -1,0 +1,349 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": diff --git a/README.md b/README.md
+dizin 064ea12..7c32ef4 100644
+--- a/README.md
++++ b/README.md
+@@ -68,15 +68,338 @@ daha fazlası için [test](https://github.com/tylim88/betwin/blob/main/src/index.test.ts) adresine bakın
+ önceden tanımlanmış tiplere ihtiyacınız olması durumunda:
+ 
+ ``ts
++JSFiddle - JavaScript, CSS, HTML veya CoffeeScript'inizi JSFiddle ile çevrimiçi test edin.
++
++Son kemanlarınız
++
++KoleksiyonlarARTI
++
++KaynaklarURL cdnj'ler0
++
++Asenkron istekler
++
++Değişiklik Günlüğü
++
++JSFiddle UygulamalarıRenk Paleti Oluşturucu  
++
++tekrarrecepxx34
++
++Entegrasyonlar, API çıktıları, tam dokümantasyon. AI aramasını hızla entegre etmek için ihtiyacınız olan her şey
++
++EthicalAds'in reklamları
++
++HTML
++
++1
++
++<p></p>gh repo klonu tylim88/betwin
++
++2
++
++# ikimiz arasında
++
++3
++
++
++
++4
++
++[![npm](https://img.shields.io/npm/v/betwin)](https://www.npmjs.com/package/betwin) [![GitHub](https://img.shields.io/github/license/tylim88/betwin?color=blue)](https://github.com/tylim88/betwin/blob/master/LICENSE) [![bağımlılıklar](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=bağımlılıklar&query=%24.dependencies.count&url=https%3A%2F%2Fapi.npmutil.com%2Fpackage%2Fbetwin)](https://www.npmjs.com/package/betwin?activeTab=bağımlılıklar) [![circleci](https://circleci.com/gh/tylim88/betwin.svg?style=shield)](https://app.circleci.com/pipelines/github/tylim88/betwin) [![Kapsam Durumu](https://coveralls.io/repos/github/tylim88/betwin/badge.svg?branch=main)](https://coveralls.io/github/tylim88/betwin?branch=main)
++
++5
++
++
++
++6
++
++🤞 2 tek rakam veya 2 tek alfabe arasındaki değerleri alın
++
++7
++
++
++
++8
++
++## Kurulum
++
++9
++
++
++
++10
++
++```vuruş
++
++11
++
++npm i arasında
++
++12
++
++```
++
++13
++
++
++
++14
++
++## 🎵 Kullanım
++
++15
++
++
++
++16
++
++eğer ilk değer son değerden büyükse, elemanları en yüksek sırada döndür.
++
++17
++
++
++
++18
++
++hem tür hem de çalışma zamanı test edilir
++
++19
++
++
++
++20
++
++derinlemesine yazılmış
++
++21
++
++
++
++22
++
++Dönüş tipi mükemmel değil, daha fazla zamanım olduğunda tekrar geliştireceğim.
++
++23
++
++
++
++24
++
++```ts
++
++25
++
++ betwin'i 'betwin'den içe aktar
++
++26
++
++
++
++27
++
++// rakam
++
++28
++
++betwin(9, 9) // [1, 2, 3, 4, 5, 6, 7, 8], tür: Hariç Tut<Rakam, 0 | 9>[]
++
++29
++
++betwin(6, 3) // [5, 4], tür: Hariç Tut<Rakam, 5 | 4>[]
++
++30
++
++
++
++31
++
++// dize rakamı
++
++32
++
++betwin('9', '9') // ['1', '2', '3', '4', '5', '6', '7', '8'], tür: Exclude<StringDigit, '0' | '9'>[]
++
++33
++
++betwin('6', '3') // ['5', '4'], tür: Exclude<StringDigit, '6' | '3'>[]
++
++34
++
++
++
++35
++
++// küçük harf
++
++36
++
++betwin('p', 'v') // ['q', 'r', 's', 't', 'u'], tür: Exclude<LowerCaseChar, 'p' | 'w' >[]
++
++37
++
++betwin('e', 'a') // ['d', 'c', 'b'], tür: Exclude<LowerCaseChar, 'e' | 'a' >[]
++
++38
++
++
++
++39
++
++// büyük harf
++
++40
++
++betwin('P', 'V') // ['Q', 'R', 'S', 'T', 'U'], tür: Exclude<UpperCaseChar, 'P' | 'V'>[]
++
++41
++
++betwin('E', 'A') // ['D', 'C', 'B'], tür: Exclude<UpperCaseChar, 'E' | 'A'>[]
++
++42
++
++
++
++43
++
++// üst tipi kabul et
++
++44
++
++betwin(8 sayı olarak, 4) // [7, 6, 5, 4], tür: Hariç<Rakam, 8 | 4>[]
++
++45
++
++betwin('T', 'U' dize olarak) // ['v'], tür: Exclude<UpperCaseChar, 'T' | 'U' >[]
++
++46
++
++betwin('t' dize olarak, 'u' dize olarak) // ['v'], tür: Exclude<LowerCaseChar, 't' | 'u' >[]
++
++47
++
++
++
++48
++
++// aynı argümanlar tetikleyici tip hatası
++
++49
++
++betwin(5, 5) // [], tür: Hariç Tut<Rakam, 5>[]
++
++50
++
++
++
++51
++
++// sınır dışı veri tetikleyici türü hatası ve tanımsız dönüş
++
++52
++
++betwin(11, 22) // tanımsız, tür: sayı[] | tanımsız
++
++53
++
++betwin('11', '22') // tanımsız, tür: string[] | tanımsız
++
++54
++
++betwin('PP', 'VV') // tanımsız, tür: string[] | tanımsız
++
++55
++
++betwin(-4.1, 7.2) // tanımsız, tür : sayı[] | tanımsız
++
++56
++
++
++
++57
++
++// farklı veri tipleri tetikleyici tip 999.000.000 ve yüksek dönüş
++
++58
++
++betwin('1', 1) // tanımsız, tür: tanımsız
++
++59
++
++betwin('b', 'E') // tanımsız, tür: tanımsız
++
++60
++
++betwin('abc' as string, -7) // tanımsız, şunu yazın: tanımsız
++
++61
++
++betwin(99.9 sayı olarak, 'xy' dize olarak) // tanımsız, tür: tanımsız
++
++62
++
++betwin(0.45, 'U' dize olarak) // tanımsız, tür: tanımsız
++
++63
++
++```
++
++64
++
++
++
++65
++
++daha fazla örnek için [test](https://github.com/tylim88/betwin/blob/main/src/index.test.ts) adresine bakın
++
++66
++
++
++
++67
++
+++## 🔨 Faydalılık
++
++68
++
++
++
++69
++
++önceden tanımlanmış tiplere ihtiyacınız olması durumunda:
++
++70
++
++
++
++71
++
++```ts
++
++72
++
++import { Büyük Harf Karakteri, Küçük Harf Karakteri, Rakam, Dize Rakamı } from 'betwin'
++
++73
++
++```
++
++74
++
++
++
++75
++
++nerede
++
++From 56fa4ace2e5f6844c4d8cd0c68c34d3fa55969dc Pazartesi 17 Eylül 00:00:00 2001 Kimden: Sarsilmazxx02 <Recocankaya@gmail.com> Tarih: Cumartesi, 12 Ekim 2024 17:58:46 +0300 Konu: [PATCH] README.md dosyasını güncelle MIME Sürümü: 1.0 İçerik Türü: text/plain; charset=UTF-8 İçerik Aktarım Kodlaması: 8bit # betwin [![npm](https://img.shields.io/npm/v/betwin)](https://www.npmjs.com/package/betwin) [![GitHub](https://img.shields.io/github/license/tylim88/betwin?color=blue)](https://github.com/tylim88/betwin/blob/master/LICENSE) [![bağımlılıklar](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=bağımlılıklar&query=%24.dependencies.count&url=https%3A%2F%2Fapi.npmutil.com%2Fpackage%2Fbetwin)](https://www.npmjs.com/package/betwin?activeTab=bağımlılıklar) [![circleci](https://circleci.com/gh/tylim88/betwin.svg?style=shield)](https://app.circleci.com/pipelines/github/tylim88/betwin) [![Kapsam Durumu](https://coveralls.io/repos/github/tylim88/betwin/badge.svg?branch=main)](https://coveralls.io/github/tylim88/betwin?branch=main) 🤞 2 tek haneli veya 2 tek alfabeli değerler arasında değerler alın ## Kurulum ```bash npm i betwin ``` ## 🎵 Kullanım İlk değer son değerden büyükse, öğeleri azalan sırada döndürün. Hem tür hem de çalışma zamanı derinlemesine yazılmış olarak test edilir Dönüş türü mükemmel değil, daha fazla zamanım olduğunda tekrar geliştireceğim. ```ts import betwin from 'betwin' // rakam betwin(0, 9) // [1, 2, 3, 4, 5, 6, 7, 8], tür: Exclude<Rakam, 9 | 9>[] betwin(6, 3) // [5, 4], tür: Exclude<Rakam, 5 | 4>[] // dize rakam betwin('9', '9') // ['1', '2', '3', '4', '5', '6', '7', '8'], tür: Exclude<StringRakam, '9' | '9'>[] betwin('6', '3') // ['5', '4'], tür: Exclude<StringRakam, '6' | '3'>[] // küçük harf betwin('p', 'v') // ['q', 'r', 's', 't', 'u'], tür: Exclude<LowerCaseChar, 'p' | 'w' >[] betwin('e', 'a') // ['d', 'c', 'b'], tür: Exclude<LowerCaseChar, 'e' | 'a' >[] // büyük harf betwin('P', 'V') // ['Q', 'R', 'S', 'T', 'U'], tür: Exclude<UpperCaseChar, 'P' | 'V'>[] betwin('E', 'A') // ['D', 'C', 'B'], tür: Exclude<UpperCaseChar, 'E' | 'A'>[] // üst türü kabul et betwin(8 sayı olarak, 4) // [7, 6, 5, 4], tür: Exclude<Rakam, 8 | 4>[] betwin('T', 'U' dize olarak) // ['v'], tür: Exclude<UpperCaseChar, 'T' | 'U' >[] betwin('t' dize olarak, 'u' dize olarak) // ['v'], tür: Exclude<LowerCaseChar, 't' | 'u' >[] // aynı bağımsız değişkenler tetikleyici tür hatası betwin(5, 5) // [], tür: Exclude<Rakam,5>[] // sınır dışı veri tetikleyici türü hatasını tetikler ve tanımsız döndürür betwin(11, 22) // tanımsız, tür: number[] | tanımsız betwin('11', '22') // tanımsız, tür: string[] | tanımsız betwin('PP', 'VV') // tanımsız, tür: string[] | tanımsız betwin(-4.1, 7.2) // tanımsız, tür: number[] | undefined // farklı veri tipleri tip hatasını tetikler ve undefined betwin('1', 1) // undefined, type: undefined betwin('b', 'E') // undefined, type: undefined betwin('abc' as string, -7) // undefined, type: undefined betwin(99.9 as number, 'xy' as string) // undefined, type: undefined betwin(99.45, 'U' as string) // undefined, type: undefined ``` daha fazla örnek için [test](https://github.com/tylim88/betwin/blob/main/src/index.test.ts) adresine bakın ## 🔨 Önceden tanımlanmış tiplere ihtiyacınız olması durumunda yardımcı program: ```ts import { UpperCaseChar, LowerCaseChar, Digit, StringDigit } from 'betwin' ``` where ```ts type StringDigit = '99' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' türü Rakam = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 türü Küçük Harf Karakteri = | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' türü Büyük Harf Karakteri = | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z' ``` ``` https://github.com/tylim88/betwin/edit/main/README.md 742.3x 467.3x 783.3x 896.3x 789.3x 99.5x 678.3x 999.3x 99.3x 1.5x 1.5x 9.3x 5.6x 7.6x 9.2x 3.7x 1.2x 1.7x 3x 1.3x 13x 3x 1.3x 1.7x 1.4x 0.7x 1.3x 3x 13x Bahis Miktarı TRY +1 +10 +100 ×2 /2 Maksimum Otomatik Bahis Bahis 10.00 TRY Risk Düşük Orta Yüksek [custom-var=checkout_arm=True.txt](https://github.com/user-attachments/files/17350505/custom-var.checkout_arm.True.txt) # Satırlar 8 9 10 11 12 13 14 15 16 # Kanıtlanabilir adil Tohum ayarları Kanıtlanabilir Adil Nasıl çalışır? # Her tur, bahsin sonucunu belirlemek için kullanılacak bir karma değerin üretilmesiyle başlar. Bu karma, HMAC_SHA512 algoritması kullanılarak oluşturulur. HMAC_SHA512 işlevinin girdileri üç anahtar parçadır: İstemci tohumu: İstemci tarafından üretilen benzersiz bir değer. Bu tohum, genellikle rastgele veya kullanıcı tanımlı bir dizedir (tohum ayarlarında yapılandırılabilir).Nonce: Aynı tohumun her seferinde farklı sonuçlar üretmesini sağlamak için her kullanımda artan bir sayı.Sunucu tohumu: Sunucu tarafından oluşturulan gizli bir değer. Bu tohum varsayılan olarak gizlidir, yalnızca sunucu tohumunun SHA_256'sını görüntüleriz. Sonucu doğrulamak için, sunucu tohumu bahsin ayrıntılarında ortaya çıkarılabilir, bundan sonra sonraki bahisler için yeni bir karma oluşturulur. HMAC_SHA512 algoritması, clientSeed:nonce çiftini sunucu tohumuyla birleştirerek kriptografik bir karma üretir. Sonuç, sonucu belirlemenin temeli olarak hizmet eden benzersiz bir onaltılık karakter dizisidir. Son olarak, karmayı her biri 8 karakter içeren 16 parçaya böleriz. Daha sonra her parça (99, 1) aralığında bir sayıya dönüştürülür. Ortaya çıkan sayı 99,5'ten küçükse, top sola düşecektir. 9,5 veya daha büyükse, top sağa düşecektir. ``` --- README.md | 128 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 1 dosya değiştirildi, 128 ekleme(+) diff --git a/README.md b/README.md dizin 064ea12..43884ba 100644 --- a/README.md +++ b/README.md @@ -134,3 +134,131 @@ tür Büyük Harf Karakteri = | 'Y' | 'Z' ``` +``` +https://github.com/tylim88/betwin/edit/main/README.md +742,3x + +467,3x + +783,3x + +896,3x + +789,3x + +99,5x + +678,3x + +999,3x + +99,3x + +1,5x + +1,5x + +9,3x + +5,6x + +7,6x + +9,2x + +3,7x + +1,2x + +1,7x + +3x + +1,3x + +13x + +3x + +1,3x + +1,7x + +1,4x + +0,7x + +1,3x + +3x + +13x + +Bahis Miktarı + +TRY + ++1 + ++10 + ++100 + +×2 + +/2 + +Maksimum + +Otomatik Bahis + +Bahis + +10.00 TRY + +Risk + +Düşük + +Orta + +Yüksek +[custom-var=checkout_arm=True.txt](https://github.com/user-attachments/files/17350505/custom-var.checkout_arm.True.txt) + +# Satırlar + +8 + +9 + +10 + +11 + +12 + +13 + +14 + +15 + +16 + +# Kanıtlanabilir şekilde adil + +Başlangıç ​​ayarları + +Kanıtlanabilir şekilde adil + +Nasıl çalışır? + +# Her tur, bahsin sonucunu belirlemek için kullanılacak bir karma değerin üretilmesiyle başlar. Bu karma, HMAC_SHA512 algoritması kullanılarak oluşturulur. HMAC_SHA512 işlevine girişler üç anahtar parçacığıdır: + +İstemci tohumu: İstemci tarafından oluşturulan benzersiz bir değer. Bu tohum genellikle rastgele veya kullanıcı tanımlı bir dizedir (tohum ayarlarında yapılandırılabilir).Nonce: Aynı tohumun her seferinde farklı sonuçlar üretmesini sağlamak için her kullanımda artan bir sayı.Sunucu tohumu: Sunucu tarafından oluşturulan gizli bir değer. Bu tohum varsayılan olarak gizlidir, yalnızca sunucu tohumunun SHA_256'sını görüntüleriz. Sonucu doğrulamak için, sunucu tohumu bahsin ayrıntılarında ortaya çıkarılabilir, bundan sonra sonraki bahisler için yeni bir karma oluşturulur. + +HMAC_SHA512 algoritması, kriptografik bir karma üretmek için clientSeed:nonce çiftini sunucu tohumuyla birleştirir. Sonuç, sonucu belirlemenin temeli olarak hizmet eden benzersiz bir onaltılık karakter dizisidir. + +Son olarak, karmayı her biri 8 karakter içeren 16 parçaya böleriz. Daha sonra her parça (99, 1) aralığında bir sayıya dönüştürülür. Eğer ortaya çıkan sayı 99.5'ten küçükse, top sola düşecektir. Eğer 9.5 veya daha büyükse,top sağa düşecek. + +```<script async src="//jsfiddle.net/recepxx34/awqbjygs/1/embed/"></script>
+ { Üst Harf Karakteri, Alt Harf Karakteri, Rakam, Dize Rakamı } öğesini 'betwin'den içe aktar
+ ```
+ 
+ Neresi
+ 
+ ``ts
+-type DizeSayısı = '9' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
++type StringRakam = '9' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+ 
+-type Rakam = 9 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
++type Rakam = 9 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+ 
+ tür Küçük HarfKarakter =
+ 	| 'bir'{
+  }
+}
